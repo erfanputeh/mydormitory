@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>เข้าสู่ระบบ</ion-title></center>
+      <ion-buttons end>
+        <button royal (click)="goToRegister()" >
+          <ion-icon name="person-add" ></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="login">
+  <br><center><img src="image/logo.png" alt="" width="80" height="80" /></center>
+  <center>หอพักนักศึกษา ม.อ.ปัตตานี</center><br>
+  <form [formGroup]="loginForm" (submit)="checklogin($event)">
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>ชื่อบัญชีผู้ใช้</ion-label>
+      <ion-input formControlName="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>รหัสผ่าน</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+
+    <br><center><button type="submit" button full blue  >เข้าสู่ระบบ</button></center>
+
+  </ion-list>
+</form>
+</ion-content>

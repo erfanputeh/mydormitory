@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>หอพัก</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="goToFloor(item)">
+          <img src="http://localhost/mydorm/images/dorm/{{item.pic_dorm}}" alt="" />
+          <h2>{{item.dorm_name}}</h2>
+          <p>จำนวนชั้น : {{item.floor_amout}}</p>
+          <p>จำนวนห้อง : {{item.room_amout}}</p>
+          <p>ประเภทหอพัก : {{item.dorm_category}}</p>
+          <p>ราคาหอพัก : {{item.price}}</p>
+      </button>
+    </ion-list>
+</ion-content>

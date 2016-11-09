@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>สวัสดิการหอพัก</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let item of items">
+          <img src="http://localhost/mydorm/images/benefits/{{item.newbenefits_picture}}" alt="" />
+          <h4>{{item.benefits_name}}</h4>
+          <p>{{item.detail_benefits}}</p>
+      </button>
+    </ion-list>
+</ion-content>

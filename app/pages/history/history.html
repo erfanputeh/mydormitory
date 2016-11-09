@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>ข้อมูลการจอง</ion-title></center>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+      <ion-item  *ngIf="!book">
+          <center><p>คุณยังไม่มีการจองหอพัก</p></center>
+      </ion-item>
+    <center><ion-list inset *ngIf="book">
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>วันที่จองของคุณ</ion-label>
+          <ion-input type="text" value="{{date}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>ชื่อผู้จอง</ion-label>
+          <ion-input type="text" value="{{item.name}} {{item.surname}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>หอพัก</ion-label>
+          <ion-input type="text" value="{{item.dorm_name}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>ชั้น</ion-label>
+          <ion-input type="text" value="{{item.floor_name}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>ห้อง</ion-label>
+          <ion-input type="text" value="{{item.room_name}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>สถานะการจอง</ion-label>
+          <ion-input type="text" value="{{status}}" disabled></ion-input>
+      </ion-item>
+
+
+</ion-list></center>
+  <!-- </form> -->
+</ion-content>

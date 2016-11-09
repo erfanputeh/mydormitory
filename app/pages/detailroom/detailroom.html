@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><h6>รายละเอียดของห้อง</h6></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list >
+    <ion-item *ngFor="let item of items" >
+      <img src="http://localhost/mydorm/images/room/{{item.newroom_picture}}" alt="" />
+        <p>ห้อง: {{item.room_name}}</p>
+        <p>สถานะห้อง: {{status}}</p>
+        <p>จำนวนเตียงที่สามารถจองได้: {{count}}/{{item.amount_bed}}</p>
+        <p>จำนวนเตียงที่จองแล้ว: {{count}}</p>
+    </ion-item>
+  </ion-list>
+  <br><center><button  class="button button-full" blue (click)="goToSuccess(item)">ดำเนินการจอง</button></center>
+</ion-content>

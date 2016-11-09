@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>เมนู</ion-title></center>
+      <ion-buttons end *ngIf="member_id">
+        <button royal (click)="goToProfile()" >
+          <ion-icon name="contact" ></ion-icon>
+        </button>
+      </ion-buttons>
+
+      <ion-buttons end *ngIf="!member_id">
+      </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+    <br><center><img src="image/logo.png" alt="" width="80" height="80" /></center>
+    <center>หอพักนักศึกษา ม.อ.ปัตตานี</center><br><br>
+    <img src="image/icon/booking.png" class="icon" *ngIf="!booking&&member_id" (click)="goToDorm()"/>
+    <img src="image/icon/booking.png" class="icon" *ngIf="booking&&member_id" (click)="showbooking()"/>
+    <img src="image/icon/booking.png" class="icon" *ngIf="!member_id" (click)="showToast()"/>
+    <img src="image/icon/activity.png" class="icons" (click)="goTodormactivity()"/><br><br><br><br>
+    <img src="image/icon/benefits.png" class="icon" (click)="goTodormbenefits()"/>
+    <img src="image/icon/repair.png" class="icons" *ngIf="booking&&member_id" (click)="goToRepair()"/>
+    <img src="image/icon/repair.png" class="icons" *ngIf="!booking&&member_id" (click)="showpayment()"/>
+    <img src="image/icon/repair.png" class="icons" *ngIf="!booking&&!member_id" (click)="showToast()"/><br><br><br><br>
+    <img src="image/icon/payment.png" class="icon" *ngIf="booking&&member_id"  (click)="goToPayment()" />
+    <img src="image/icon/payment.png" class="icon" *ngIf="!booking&&member_id" (click)="showpayment()"/>
+    <img src="image/icon/payment.png" class="icon" *ngIf="!booking&&!member_id" (click)="showToast()"/>
+    <img src="image/icon/rule.png" class="icons" (click)="goToRule()" />
+</ion-content>
+
+ <!-- <ion-content class="home">
+      <br><center><img src="image/logopsu.png" alt="" width="40" /></center>
+      <center>หอพักนักศึกษา ม.อ.ปัตตานี</center><br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-10>
+      </ion-col>
+
+      <ion-col width-30>
+        <img src="image/icon/booking.png" class="icon" *ngIf="!booking&&member_id" (click)="goToDorm()"/>
+        <img src="image/icon/booking.png" class="icon" *ngIf="booking&&member_id" (click)="showbooking()"/>
+        <img src="image/icon/booking.png" class="icon" *ngIf="!member_id" (click)="showToast()"/>
+      </ion-col>
+
+      <ion-col width-30>
+        <img src="image/icon/group.png" class="icons" (click)="goTodormactivity()"/>
+      </ion-col>
+
+      <ion-col width-20>
+      </ion-col>
+    </ion-row><br><br>
+
+    <ion-row>
+      <ion-col width-10>
+      </ion-col>
+
+      <ion-col width-30>
+        <img src="image/icon/computer.png" class="icon" (click)="goTodormbenefits()"/>
+      </ion-col>
+
+      <ion-col width-30>
+        <img src="image/icon/settings.png" class="icons" *ngIf="booking&&member_id" (click)="goToRepair()"/>
+        <img src="image/icon/settings.png" class="icons" *ngIf="!booking&&member_id" (click)="showpayment()"/>
+        <img src="image/icon/settings.png" class="icons" *ngIf="!booking&&!member_id" (click)="showToast()"/>
+      </ion-col>
+
+      <ion-col width-20>
+      </ion-col>
+
+    </ion-row><br><br>
+
+    <ion-row>
+
+      <ion-col width-10>
+      </ion-col>
+
+      <ion-col width-40>
+        <img src="image/icon/payment.png" class="icon" *ngIf="booking&&member_id"  (click)="goToPayment()" />
+        <img src="image/icon/payment.png" class="icon" *ngIf="!booking&&member_id" (click)="showpayment()"/>
+        <img src="image/icon/payment.png" class="icon" *ngIf="!booking&&!member_id" (click)="showToast()"/>
+      </ion-col>
+
+      <ion-col width-30>
+        <img src="image/icon/rule.png" class="icons" (click)="goToRule()"  />
+      </ion-col>
+
+      <ion-col width-20>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content> -->

@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>เเจ้งซ่อม</ion-title></center>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="repairForm" (submit)="repair($event)">
+
+    <center>
+      <ion-list inset>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>ชื่อ-นามสกุล</ion-label>
+          <ion-input type="text" value="{{item.name}} {{item.surname}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items">
+          <ion-label floating>หอพัก</ion-label>
+          <ion-input type="text" value="{{item.dorm_name}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items" >
+          <ion-label floating>ชั้น</ion-label>
+          <ion-input  type="text" value="{{item.floor_name}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item ion-item *ngFor="let item of items" >
+          <ion-label floating>ห้อง</ion-label>
+          <ion-input type="text" value="{{item.room_name}}" disabled></ion-input>
+      </ion-item>
+<br>
+        <ion-item>
+          <ion-label floating>เลือกอุปกรณ์</ion-label>
+          <ion-select formControlName="material">
+            <ion-option *ngFor="let met of material" value="{{met.material_id}}">{{met.material_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+      <ion-item>
+        <ion-label floating>รายละเอียดการแจ้งซ่อม</ion-label>
+          <ion-input formControlName="detail_repair" type="text" ></ion-input>
+      </ion-item>
+
+  <br><center><button type="submit" class="button button-full" blue [disabled]="!repairForm.valid" >แจ้งซ่อม</button></center>
+
+
+  </ion-list>
+</center>
+  </form>
+<br><center><button  class="button button-full" blue  (click)="goToDetailRepair()">รายการแจ้งซ่อม</button></center>
+</ion-content>

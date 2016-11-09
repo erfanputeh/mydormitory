@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>สมัครสมาชิก</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="register">
+  <form [formGroup]="registerForm" (submit)="addmember($event)">
+
+    <ion-list inset>
+      <ion-label><h6>ข้อมูลติดต่อ</h6></ion-label>
+      <ion-item>
+        <ion-input formControlName="name" type="text" placeholder="ชื่อ"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="surname" type="text" placeholder="นามสกุล"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="student_id" type="text" placeholder="รหัสนักศึกษา"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="faculty" type="text" placeholder="คณะ"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="major" type="text" placeholder="สาขาวิชา"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="email" type="email" placeholder="อีเมล์"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="address" type="text" placeholder="ที่อยู่"></ion-input>
+    </ion-item>
+
+    <ion-label><h6>สร้างบัญชีผู้ใช้</h6></ion-label>
+      <ion-item>
+        <ion-input formControlName="username" type="text" placeholder="ชื่อบัญชีผู้ใช้"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="รหัสผ่าน"></ion-input>
+    </ion-item>
+
+
+  <br><center><button type="submit" class="button button-full" blue  [disabled]="!registerForm.valid">สมัครสมาชิก</button></center>
+
+      </ion-list>
+  </form>
+</ion-content>

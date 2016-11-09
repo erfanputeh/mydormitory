@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ดำเนินการจอง</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list >
+      <ion-item *ngFor="let item of booking" >
+        <p>{{item.name_member}} {{item.surname_member}}</p>
+        <p>{{item.dorm_name}}</p>
+        <p>{{item.floor_name}}</p>
+        <p>{{item.room_name}}</p>
+      </ion-item>
+    </ion-list>
+      <br><center><button  class="button button-full" blue (click)="gotoBooking()">จองหอพัก</button></center>
+</ion-content>

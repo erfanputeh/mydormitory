@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>ข้อมูลส่วนตัว</ion-title></center>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <center>
+  <form  *ngFor="let item of items" >
+    <ion-list inset>
+      <ion-item>
+          <ion-label floating>รหัสนักศึกษา</ion-label>
+          <ion-input type="text" value="{{item.student_id}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>ชื่อ-สกุล</ion-label>
+          <ion-input type="text" value="{{item.name}} {{item.surname}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>คณะ</ion-label>
+          <ion-input type="text" value="{{item.faculty}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>สาขาวิชา</ion-label>
+          <ion-input type="text" value=" {{item.major}}" disabled></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>อีเมล์</ion-label>
+          <ion-input type="text" value=" {{item.email}}" disabled></ion-input>
+      </ion-item>
+
+</ion-list>
+</form>
+</center>
+
+</ion-content>

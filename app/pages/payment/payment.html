@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>ชำระเงิน</ion-title></center>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-button ion-item *ngFor="let item of items"><br>
+      <p>ชื่อ-นามสกุล : {{item.name}} {{item.surname}}</p>
+      <p>หอพัก : {{item.dorm_name}}</p>
+      <p>ชั้น : {{item.floor_name}}</p>
+      <p>ห้อง : {{item.room_name}}</p><br>
+    </ion-button>
+  </ion-list>
+  <ion-list *ngFor="let item of items">
+    <ion-item><br>
+    <center><h6>รายละเอียดการชำระเงิน</h6>
+      <p>ค่าหอพัก : {{item.price}} บาท</p>
+      <p>ค่าประกัน : {{prakan}} บาท </p><br>
+      <!-- <p>รวม : {{item.price}}+{{prakan}} บาท </p><br> -->
+      <p>เลขที่บัญชีมหาวิทยาลัย 103-1100-12130</p>
+      <p>ชื่อบัญชี มหาวิทยาลัยสงขลานครินทร์</p>
+      <p>ธนาคารไทยพาณิชย์ มหาวิทยาลัยสงขลานครินทร์</p>
+      <p>วิทยาเขตปัตตานี</p></center>
+    </ion-item>
+  </ion-list>
+
+
+  <form [formGroup]="paymentForm" *ngFor="let item of items" (submit)="Payment($event,item)">
+
+    <center><ion-list inset>
+
+      <!-- <ion-item>
+          <ion-label floating>วันที่ชำระเงิน</ion-label>
+          <ion-datetime formControlName="payment_date"  displayFormat="YYYY/MM/DD" ></ion-datetime>
+      </ion-item> -->
+
+      <img *ngIf="slip" class="" src="http://localhost/mydorm/images/slip/{{slip}}" alt="" />
+        <button *ngIf="slip" (click)="takeslip()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+
+      <img *ngIf="!slip" class="" alt="" />
+        <ion-item *ngIf="!slip" (click)="takeslip()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-item>
+
+        <img *ngIf="slipSrc" [src]="slipSrc"/>
+  <br><center><button  *ngIf="slipSrc" type="submit" class="button button-full" blue [disabled]="!paymentForm.valid">ชำระเงิน</button></center>
+
+</ion-list></center>
+  </form>
+</ion-content>

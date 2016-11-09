@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>กิจกรรมหอพัก</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="goToActivity(item)">
+          <img src="http://localhost/mydorm/images/dorm/{{item.pic_dorm}}" alt="" />
+          <center><h2>{{item.dorm_name}}</h2></center>
+      </button>
+    </ion-list>
+</ion-content>

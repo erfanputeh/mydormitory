@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>การแจ้งเตือน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item  *ngIf="!notifications">
+      <center><p>คุณยังไม่มีการแจ้งเตือน</p></center>
+  </ion-item>
+  <ion-list  *ngIf="notifications">
+    <!-- <button  ></button> -->
+        <p *ngFor="let item of items">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.notifi_text}}</p><br>
+
+  </ion-list><br>
+    <center><button  ion-button small outline (click)="goToHome()">กลับสู่หน้าหลัก</button></center>
+</ion-content>

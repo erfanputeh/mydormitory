@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ห้อง</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- <ion-scroll scrollY="true" scrollX="true"> -->
+<ion-content class="height">
+<div>  <!-- #room id="room" -->
+  <scroll-content >
+      <center>
+  <ion-list class="fullscreen-block">
+    <ion-col>
+      <ion-row width-90>
+
+            <div class="col" >
+              <button class="colorfont" blue >
+                <p class="font2"><b>ห้องน้ำ</b></p>
+              </button>
+              <div width-18 *ngFor="let item of items" class="col" (click)="goToDetailroom(item)">
+                  &nbsp;<button  class="colorfont" blue>
+                    <center><p class="font" *ngIf="floor_id">{{item.room_name}}</p></center>
+                  </button>
+              </div>
+              <button class="colorfont" blue>
+                <p class="font2"><b>ห้องน้ำ</b></p>
+              </button>
+              <br><br>
+          </div>
+
+          <div class="col" text-center>
+                <center><h6><b>ทางเดิน</b></h6></center>
+          </div>
+
+          <div class="col" >
+            <button class="colorfont" blue >
+              <h5 class="font1"><b>บรรได</b></h5>
+            </button>
+            <div width-18 *ngFor="let item of items" class="col" (click)="goToDetailroom(item)">
+                &nbsp;<button  class="colorfont" blue>
+                  <center><p class="font" *ngIf="floor_id">{{item.room_name}}</p></center>
+                </button>
+            </div>
+            <button class="colorfont" blue>
+              <p class="font1"><b>บรรได</b></p>
+            </button>
+            <br><br>
+        </div>
+      </ion-row>
+    </ion-col>
+  </ion-list><br><br>
+  </center>
+
+
+
+  </scroll-content >
+</div>
+
+</ion-content>
+<ion-footer>
+  <div >
+    <p danger>&nbsp;&nbsp;&nbsp;&nbsp;หมายเหตุ : สำหรับการจองหอพัก นักศึกษาไม่สามารถที่จะแก้ไขการจองได้ ถ้าได้ทำการจองเรียบร้อยแล้ว</p>
+  </div>
+</ion-footer>

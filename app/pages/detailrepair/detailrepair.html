@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <center><ion-title>รายการแจ้งซ่อม</ion-title></center>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item  *ngIf="!repair">
+      <center><p>คุณยังไม่มีการแจ้งซ่อม</p></center>
+  </ion-item>
+    <ion-list inset *ngIf="repair">
+      <ion-item *ngFor="let item of items">
+        <br>
+        <h6>{{item.detail_repair}} </h6>
+        <div *ngIf="item.repair_status==1" >
+          <p>สถานะการแจ้งซ่อม : ซ่อมแล้ว</p>
+        </div>
+        <div *ngIf="item.repair_status==2" >
+          <p>สถานะการแจ้งซ่อม : ยังไม่ดำเนินการ</p>
+        </div>
+        <div *ngIf="item.repair_status==3" >
+          <p>สถานะการแจ้งซ่อม : กำลังซ่อม </p>
+        </div>
+      </ion-item>
+    </ion-list>
+</ion-content>
