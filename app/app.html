@@ -9,36 +9,36 @@
         <img src="image/dorm10.JPG" alt="" width="100%" width="100%" />
 
         <button  ion-item  *ngIf="person" >
-          <ion-icon ios="ios-contact" md="logo-android"></ion-icon>
+          <ion-icon ios="ios-contact" md="md-person"></ion-icon>
           {{person}} {{surname_person}}
         </button>
         <button menuClose ion-item  *ngIf="!person" (click)="login()">
-          <ion-icon ios="md-log-in" md="logo-android"></ion-icon>
+          <ion-icon ios="md-log-in" md="md-log-in"></ion-icon>
           เข้าสู่ระบบ
         </button>
 
         <button menuClose ion-item  *ngIf="person" (click)="home()">
-          <ion-icon ios="ios-home" md="logo-android"></ion-icon>
+          <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
           เมนู
         </button>
 
         <button menuClose ion-item  *ngIf="person" (click)="history()">
-          <ion-icon ios="ios-book" md="logo-android"></ion-icon>
+          <ion-icon ios="ios-book" md="md-book"></ion-icon>
           ข้อมูลการการจอง
         </button>
 
         <button menuClose ion-item  *ngIf="person" (click)="notifications()">
-          <ion-icon ios="ios-notifications" md="logo-android"></ion-icon>
+          <ion-icon ios="ios-notifications" md="md-notifications"></ion-icon>
         การแจ้งเตือน<ion-span *ngIf="numbers" class="label" item-right>{{numbers}}</ion-span>
        </button>
 
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          <ion-icon ios="md-at" md="logo-android"></ion-icon>
+          <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
         {{p.title}}
         </button>
 
         <button menuClose ion-item  *ngIf="person" (click)="logout()">
-          <ion-icon ios="md-log-out" md="logo-android"></ion-icon>
+          <ion-icon ios="md-log-out" md="md-log-out"></ion-icon>
         ออกจากระบบ
         </button>
 

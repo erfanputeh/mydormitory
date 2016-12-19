@@ -19,7 +19,7 @@ export class DetailrepairPage {
 
     console.log('รหัสผู้ใช้='+this.id);
 
-    this.http.get("http://localhost/mydorm/connect/getinfo/get_detailrepair.php?id="+this.id).subscribe(
+    this.http.get("http://192.168.1.15/mydorm/connect/getinfo/get_detailrepair.php?id="+this.id).subscribe(
     (response) => {
         this.items = response.json().data;
         this.repair = response.json().repair;
