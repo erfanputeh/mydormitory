@@ -13,13 +13,13 @@ export class NotifiPage {
     items : Array<{}>;
     // notifi_id: any;
 
-    updatenotifi = "http://192.168.1.15/mydorm/connect/getinfo/putnotifi.php";
+    updatenotifi = "http://localhost/mydorm/connect/getinfo/putnotifi.php";
 
   constructor(private navCtrl: NavController,private http : Http,private navparam: NavParams) {
       this.navCtrl = navCtrl;
       this.http = http;
       this.member_id = navparam.get("member_id");
-      this.http.get("http://192.168.1.15/mydorm/connect/getinfo/get_notifi.php?member_id="+this.member_id).subscribe(
+      this.http.get("http://localhost/mydorm/connect/getinfo/get_notifi.php?member_id="+this.member_id).subscribe(
       (response) => {
       this.items = response.json().data; //ดึงข้อมูลที่ได้ แล้วกําหนดให้กับตัวแปร itmes ของคลาสนี้ *
       this.notifications = response.json().notifications;

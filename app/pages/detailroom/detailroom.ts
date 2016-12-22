@@ -43,7 +43,7 @@ export class DetailroomPage {
 
     //ใช้ method get() เพื่อดึงข้อมูล
      //ใช้ method subscribe() เพื่อดึงค่า json object เข้ามาใช้งานใน component
-     this.http.get("http://192.168.1.15/mydorm/connect/getinfo/get_detailroom.php?id="+this.room_id).subscribe(
+     this.http.get("http://localhost/mydorm/connect/getinfo/get_detailroom.php?id="+this.room_id).subscribe(
      (response) => {
        this.items = response.json().data;
        this.room_status = response.json().room_status;
@@ -56,7 +56,7 @@ export class DetailroomPage {
       }
      );
 
-     this.http.get("http://192.168.1.15/mydorm/connect/getinfo/count_booking.php?id="+this.room_id).subscribe(
+     this.http.get("http://localhost/mydorm/connect/getinfo/count_booking.php?id="+this.room_id).subscribe(
      (response) => {
        this.count = response.json(); //ดึงข้อมูลที่ได้ แล้วกําหนดให้กับตัวแปร itmes ของคลาสนี้ *
       }

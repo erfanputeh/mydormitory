@@ -44,7 +44,7 @@ class MyApp {
     ];
 
     this.local.get('id_person').then((data) =>{
-      this.http.get("http://192.168.1.15/mydorm/connect/getinfo/get_notifi.php?member_id="+data).subscribe(
+      this.http.get("http://localhost/mydorm/connect/getinfo/get_notifi.php?member_id="+data).subscribe(
         (response) => {
           this.numbers = response.json().numbers;
         }

@@ -40,7 +40,7 @@ export class RoomPage {
 
     //ใช้ method get() เพื่อดึงข้อมูล
      //ใช้ method subscribe() เพื่อดึงค่า json object เข้ามาใช้งานใน component
-     this.http.get("http://192.168.1.15/mydorm/connect/getinfo/get_room.php?id="+this.floor_id+"&dorm_id="+this.dorm_id).subscribe(
+     this.http.get("http://localhost/mydorm/connect/getinfo/get_room.php?id="+this.floor_id+"&dorm_id="+this.dorm_id).subscribe(
      (response) => {
        this.items = response.json(); //ดึงข้อมูลที่ได้ แล้วกําหนดให้กับตัวแปร itmes ของคลาสนี้ *
       }

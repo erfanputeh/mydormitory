@@ -13,7 +13,7 @@ data: any = null;
     return Promise.resolve(this.data);
 }
 return new Promise(resolve => {
-  this.http.get('http://192.168.1.15/mydorm/connect/putinfo/login.php') //localhost //192.168.139.237
+  this.http.get('http://localhost/mydorm/connect/putinfo/login.php') //localhost //192.168.139.237
   .map(res => res.json())
   .subscribe(data => {
 
@@ -33,7 +33,7 @@ return new Promise(resolve => {
          }
          //don't have the data yet
           return new Promise(resolve => {
-           this.http.post('http://192.168.1.15/mydorm/connect/putinfo/login.php',body,{headers: headers})
+           this.http.post('http://localhost/mydorm/connect/putinfo/login.php',body,{headers: headers})
            .map(res => res.json())
            .subscribe(data => {
               this.data = data;

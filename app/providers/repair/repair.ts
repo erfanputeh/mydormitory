@@ -16,7 +16,7 @@ data: any = null;
        }
        //don't have the data yet
         return new Promise(resolve => {
-         this.http.post('http://192.168.1.15/mydorm/connect/putinfo/repair.php',body,{headers: headers})
+         this.http.post('http://localhost/mydorm/connect/putinfo/repair.php',body,{headers: headers})
          .map(res => res.json())
          .subscribe(data => {
             this.data = data;
